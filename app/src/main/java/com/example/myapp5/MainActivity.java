@@ -1,8 +1,11 @@
 package com.example.myapp5;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,6 +14,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("------","CREATE");
+
+        Button b1 = findViewById(R.id.btnOK);
+        b1.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                
+                Intent i = new Intent(MainActivity.this,Main4Activity.class);
+                i.putExtra("Name","ssssssssss");
+                startActivityForResult(i,110);
+
+
+
+            }
+        });
 
     }
 
@@ -49,4 +66,5 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         Log.d("------","DESTROY");
     }
+
 }
